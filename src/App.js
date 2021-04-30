@@ -1,6 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import Home from './views/home';
+import Cities from './views/cities';
+import {Switch,Route} from "react-router-dom";
 
+/*
 function App() {
   return (
     <div className="App">
@@ -15,9 +19,24 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Vamossss
         </a>
       </header>
+    </div>
+  );
+}*/
+
+function App() {
+  return (
+    <div>
+      <Switch>
+        <Route path="/cities">
+          <Cities />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
     </div>
   );
 }
