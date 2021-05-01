@@ -1,42 +1,48 @@
-import logo from './logo.svg';
+import { Grid } from '@material-ui/core';
+import Container from '@material-ui/core/Container';
+import { Route, Switch } from "react-router-dom";
 import './App.css';
-import Home from './views/home';
 import Cities from './views/cities';
-import {Switch,Route} from "react-router-dom";
+import Header from './views/common/header';
+import MenuOptions from './views/common/menu-options';
+import DailyForecast from './views/daily';
+import Home from './views/home';
+import WeeklyForecast from './views/weekly';
 
-/*
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Vamossss
-        </a>
-      </header>
-    </div>
-  );
-}*/
 
 function App() {
   return (
     <div>
-      <Switch>
-        <Route path="/cities">
-          <Cities />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
+
+      <Container maxWidth="lg">
+        <Grid container spacing={3}>
+          <Grid item xs={12}>
+            <Header></Header>
+          </Grid>
+          <Grid container spacing={3}>
+            <Grid item xs={2}>
+              <MenuOptions></MenuOptions>
+            </Grid>
+            <Grid item xs={10}>
+              <Switch>
+                  <Route path="/cities">
+                    <Cities />
+                  </Route>
+                  <Route path="/weekly">
+                    <WeeklyForecast />
+                  </Route>
+                  <Route path="/daily">
+                    <DailyForecast />
+                  </Route>
+                  <Route path="/">
+                    <Home />
+                  </Route>
+                </Switch>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Container>
+
     </div>
   );
 }
