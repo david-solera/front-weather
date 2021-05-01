@@ -5,19 +5,26 @@ import BusinessService from '../services/business-service';
 
 export default class WeeklyForecast extends Component {
 
-  state = {selectedCity: ""};
+  //state = {selectedCity: ""};
   cities = [];
 
   constructor() {
     super();
+    this.state = { selectedCity: "", cities: [] };
+  }  
+  
+  async componentDidMount() {
     // get list of available cities
-    this.cities = BusinessService.getCities();
+    this.cities = await BusinessService.getCities();
+    this.setState({ selectedCity: "", cities: this.cities });
   }
 
-  handleChange = (selectedAge) => {
-    console.log('City Selected: ' + selectedAge.target.value);
+  handleChange = (event) => {
+    console.log('City Selected: ' + event.target.value);
     // set selected city in state
-    this.setState({selectedCity:selectedAge.target.value}); 
+    this.setState({selectedCity:event.target.value});
+    // get forecast for selected City
+    BusinessService.getWeekForecast(event.target.value);
   }
 
   render() {
