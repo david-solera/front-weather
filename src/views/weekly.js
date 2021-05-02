@@ -7,10 +7,11 @@ export default class WeeklyForecast extends Component {
 
   //state = {selectedCity: ""};
   cities = [];
+  forecast = [];
 
   constructor() {
     super();
-    this.state = { selectedCity: "", cities: [] };
+    this.state = { selectedCity: "", cities: [], forecast:[] };
   }  
   
   async componentDidMount() {
@@ -19,12 +20,15 @@ export default class WeeklyForecast extends Component {
     this.setState({ selectedCity: "", cities: this.cities });
   }
 
-  handleChange = (event) => {
+  handleChange = async (event) => {
     console.log('City Selected: ' + event.target.value);
     // set selected city in state
     this.setState({selectedCity:event.target.value});
     // get forecast for selected City
-    BusinessService.getWeekForecast(event.target.value);
+    this.forecast = await BusinessService.getWeekForecast(event.target.value);
+    console.log('FORECAST:');
+    console.log(this.forecast);
+    this.setState({forecast:this.forecast});
   }
 
   render() {
@@ -41,14 +45,14 @@ export default class WeeklyForecast extends Component {
             value={this.state.selectedCity}
           >
             {this.cities.map((city) => (
-              <MenuItem key={city} value={city}>{city}</MenuItem>
+              <MenuItem key={city.cityid} value={city.name}>{city.name}</MenuItem>
             ))}
           </Select>
         </FormControl>
         <br></br>
         <br></br>
         <Divider />
-        <WeeklyTable city={this.state.selectedCity}></WeeklyTable>
+        <WeeklyTable city={this.state.selectedCity} forecast={this.state.forecast}></WeeklyTable>
       </div>
     );
   }
