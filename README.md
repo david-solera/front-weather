@@ -2,7 +2,7 @@
 Front End for Weather Forecast Application
 Provides a simple web interface for a Weather Forecast application.
 
-Installation
+**Installation**
 - Install dependencies: npm i
 - Run (local): npm run start:local
 
