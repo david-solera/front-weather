@@ -50,7 +50,7 @@ export default class CurrentWeatherTable extends Component {
             <TableCell>Weather</TableCell>
             <TableCell>
               <DayForecast 
-                image={"/images/" + this.state.forecast.summary.toLowerCase() + ".png"}
+                image={"/images/icon_" + this.state.forecast.summary.toLowerCase() + ".png"}
                 text={this.state.forecast.summary}>
               </DayForecast>
             </TableCell>
