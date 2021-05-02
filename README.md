@@ -2,7 +2,8 @@
 Front End for Weather Forecast Application
 Provides a simple web interface for a Weather Forecast application.
 
-Installation
+**INSTALLATION**
+
 - Install dependencies: npm i
 - Run (local): npm run start:local
 
@@ -21,12 +22,14 @@ The following main options are available:
 **Current Weather**: Provide the instant weather for a selected city. Automatic refresh.
 
 **ARQUITECTURE**
-Web application created with React framework.
-Use of Material React library to include already created components.
-Use of "Service" classes to connect and get data from backend application:
+
+- Web application created with React framework.
+- Use of Material React library to include already created components.
+- Use of "Service" classes to connect and get data from backend application:
   Component -> Bussines Service -> Backend Service
 
 **TO BE IMPROVED**
+
 - React Architecture, and project structure
 - Increase refresh time for performance purpose. Current refresh time if 2 seconds
 - Include a interface to Add a new City in the system (database)
