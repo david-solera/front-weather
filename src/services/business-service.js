@@ -18,4 +18,14 @@ BusinessService.getWeekForecast =  async function (city) {
     return resForecast;
 }
 
+BusinessService.getDayForecast =  async function (city) {
+    // get forecast for provided city frombackend
+    const body= {city: city};
+    const resForecast = await BackendService.callPOST("/forecast/day", body);
+
+    console.log(resForecast);
+
+    return resForecast;
+}
+
 export default BusinessService;
