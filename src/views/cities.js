@@ -35,14 +35,16 @@ export default class Cities extends Component {
               </TableRow>
             </TableHead>
             <TableBody>
-            {this.cities.map((city) => (
-              <TableRow>
-                  <TableCell>{city.name}</TableCell>
-                  <TableCell>{city.countrycode}</TableCell>
-                  <TableCell>{city.lat}</TableCell>
-                  <TableCell>{city.lon}</TableCell>
-              </TableRow>          
-            ))}
+            {
+                this.cities.map((city) => (
+                <TableRow>
+                    <TableCell>{city.name}</TableCell>
+                    <TableCell>{city.countrycode}</TableCell>
+                    <TableCell>{city.lat}</TableCell>
+                    <TableCell>{city.lon}</TableCell>
+                </TableRow>          
+                ))
+            }
             </TableBody>
           </Table>
         </TableContainer>

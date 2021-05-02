@@ -27,6 +27,11 @@ export default class MenuOptions extends Component {
             <Button variant="contained" color="primary" href="./daily">
                 Daily forecast
             </Button>
+            <br></br>
+            <br></br>
+            <Button variant="contained" color="primary" href="./current">
+                Current Weather
+            </Button>
         </div>
         );
     }

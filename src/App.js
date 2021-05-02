@@ -5,6 +5,7 @@ import './App.css';
 import Cities from './views/cities';
 import Header from './views/common/header';
 import MenuOptions from './views/common/menu-options';
+import CurrentWeather from './views/current';
 import DailyForecast from './views/daily';
 import Home from './views/home';
 import WeeklyForecast from './views/weekly';
@@ -25,6 +26,9 @@ function App() {
             </Grid>
             <Grid item xs={10}>
               <Switch>
+                  <Route path="/current">
+                    <CurrentWeather />
+                  </Route>
                   <Route path="/cities">
                     <Cities />
                   </Route>
