@@ -32,5 +32,6 @@ Use of "Service" classes to connect and get data from backend application:
 - Include a interface to Add a new City in the system (database)
 - Styles
 - Check compatibilty with mobile devices (responsiveness...)
+- i18n
 - ...
  
