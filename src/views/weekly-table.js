@@ -31,7 +31,7 @@ const WeeklyTable = (props) => {
             {props.forecast.map((day) => (
               <TableCell key={'Forecast_' + day.date}>
                 <DayForecast 
-                  image={"/images/" + day.summary + ".png"}
+                  image={"/images/" + day.summary.toLowerCase() + ".png"}
                   text={day.summary}>
                 </DayForecast>
               </TableCell>

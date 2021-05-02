@@ -29,7 +29,7 @@ const DailyTable = (props) => {
             {props.forecast.map((hour) => (
               <TableCell>
                 <DayForecast 
-                  image={"/images/" + hour.summary + ".png"}
+                  image={"/images/" + hour.summary.toLowerCase() + ".png"}
                   text={hour.summary}>
                 </DayForecast>
               </TableCell>
