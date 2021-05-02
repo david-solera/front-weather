@@ -33,5 +33,6 @@ Use of "Service" classes to connect and get data from backend application:
 - Styles
 - Check compatibilty with mobile devices (responsiveness...)
 - i18n
+- Unit testing
 - ...
  
