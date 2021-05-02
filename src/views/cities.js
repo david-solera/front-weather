@@ -37,7 +37,7 @@ export default class Cities extends Component {
             <TableBody>
             {
                 this.cities.map((city) => (
-                <TableRow>
+                <TableRow key={city.cityid}>
                     <TableCell>{city.name}</TableCell>
                     <TableCell>{city.countrycode}</TableCell>
                     <TableCell>{city.lat}</TableCell>

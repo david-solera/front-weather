@@ -17,7 +17,7 @@ const WeeklyTable = (props) => {
           <TableRow>
             <TableCell></TableCell>
             {props.forecast.map((day) => (
-              <TableCell>
+              <TableCell key={'Header_' + day.date}>
                 { daysOfWeek[new Date(day.date).getDay()]}
                 <br></br>
                 {day.date.substring(0,10)}
@@ -29,7 +29,7 @@ const WeeklyTable = (props) => {
           <TableRow>
             <TableCell>Forecast</TableCell>
             {props.forecast.map((day) => (
-              <TableCell>
+              <TableCell key={'Forecast_' + day.date}>
                 <DayForecast 
                   image={"/images/" + day.summary + ".png"}
                   text={day.summary}>
@@ -40,7 +40,7 @@ const WeeklyTable = (props) => {
           <TableRow>
             <TableCell>Temp Max.</TableCell>
             {props.forecast.map((day) => (
-              <TableCell>
+              <TableCell key={'maxtemp_' + day.date}>
                 {day.temp.max} &#8451;
               </TableCell>
             ))}
@@ -48,7 +48,7 @@ const WeeklyTable = (props) => {
           <TableRow>
             <TableCell>Temp Min.</TableCell>
             {props.forecast.map((day) => (
-              <TableCell>
+              <TableCell key={'mintemp_' + day.date}>
                 {day.temp.min} &#8451;
               </TableCell>
             ))}
@@ -56,8 +56,8 @@ const WeeklyTable = (props) => {
           <TableRow>
             <TableCell>% Rain</TableCell>
             {props.forecast.map((day) => (
-              <TableCell>
-                {day.rainProb * 100} %
+              <TableCell key={'rain_' + day.date}>
+                {Math.floor(day.rainProb * 100)} %
               </TableCell>
             ))}
           </TableRow>
