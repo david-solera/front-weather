@@ -11,9 +11,13 @@ Currently deployed on Heroku platform, available in https://front-weather.heroku
 The following main options are available:
 
 **Home page**: Main entry point to the web application
+
 **Cities**: Present a list of available cities in the application, with their details.
+
 **Weekly Forecast**: Provide the weather forecast of the next week for a selected city.
+
 **Daily Forecast**: Provide the hourly forecast (next 48 hours) of the current day for a selected city.
+
 **Current Weather**: Provide the instant weather for a selected city. Automatic refresh.
 
 **ARQUITECTURE**
